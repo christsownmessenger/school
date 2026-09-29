@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Volta Elite International School | Ho, Volta Region</title>
+<meta name="description" content="A premium private academy in Ho, Volta Region, nurturing future leaders from Creche to JHS.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: { royal: { 50:'#eef3ff', 100:'#dbe6ff', 600:'#1d4ed8', 700:'#1e40af', 800:'#14307a', 900:'#0b1f5c' },
+              gold: { 300:'#f3d67a', 400:'#e8bf45', 500:'#d4a017', 600:'#b8860b' } },
+    fontFamily: { display: ['"Playfair Display"','serif'], sans: ['Inter','system-ui','sans-serif'] }
+  } }
+}
+</script>
+<style>
+  .reveal { opacity: 0; transform: translateY(24px); transition: all .7s ease; }
+  .reveal.show { opacity: 1; transform: none; }
+  .card { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+  .card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px -12px rgba(20,48,122,.25); border-color: #e8bf45; }
+  .hero-bg { background: radial-gradient(circle at 80% 20%, rgba(232,191,69,.18), transparent 40%), linear-gradient(135deg,#0b1f5c 0%,#1e40af 100%); }
+  .modal-box { transform: scale(.9); opacity: 0; transition: all .3s ease; }
+  #modal.open .modal-box { transform: scale(1); opacity: 1; }
+</style>
+</head>
+<body class="font-sans text-slate-700 bg-white antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 inset-x-0 z-40 bg-white/90 backdrop-blur border-b border-slate-100">
+  <nav class="max-w-7xl mx-auto px-5 h-20 flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-3">
+      <svg class="w-11 h-11" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <path d="M24 3 42 10v14c0 10-8 17-18 21C14 41 6 34 6 24V10L24 3Z" fill="#14307a" stroke="#d4a017" stroke-width="2.5"/>
+        <path d="M24 13 13 19l11 6 11-6-11-6Zm-7 10v5c0 2 3.5 4 7 4s7-2 7-4v-5l-7 4-7-4Z" fill="#e8bf45"/>
+      </svg>
+      <span class="leading-tight">
+        <span class="block font-display font-bold text-royal-900 text-lg">Volta Elite</span>
+        <span class="block text-[10px] tracking-[.2em] uppercase text-gold-600 font-semibold">International School</span>
+      </span>
+    </a>
+    <ul class="hidden lg:flex items-center gap-8 text-sm font-medium">
+      <li><a class="hover:text-royal-700" href="#values">Why Us</a></li>
+      <li><a class="hover:text-royal-700" href="#classes">Classes</a></li>
+      <li><a class="hover:text-royal-700" href="#admissions">Admissions</a></li>
+      <li><a class="hover:text-royal-700" href="#contact">Contact</a></li>
+      <li><a href="#contact" class="bg-gold-500 hover:bg-gold-400 text-royal-900 font-semibold px-6 py-2.5 rounded-full shadow-md transition">Enroll Now</a></li>
+    </ul>
+    <button id="menuBtn" class="lg:hidden p-2 rounded-lg text-royal-900 hover:bg-royal-50" aria-label="Toggle menu" aria-expanded="false">
+      <svg id="iconOpen" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg id="iconClose" class="w-7 h-7 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </nav>
+  <div id="mobileMenu" class="lg:hidden hidden bg-white border-t border-slate-100 px-5 pb-6">
+    <a class="block py-3 font-medium border-b border-slate-100" href="#values">Why Us</a>
+    <a class="block py-3 font-medium border-b border-slate-100" href="#classes">Classes</a>
+    <a class="block py-3 font-medium border-b border-slate-100" href="#admissions">Admissions</a>
+    <a class="block py-3 font-medium" href="#contact">Contact</a>
+    <a href="#contact" class="mt-3 block text-center bg-gold-500 text-royal-900 font-semibold px-6 py-3 rounded-full">Enroll Now</a>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="home" class="hero-bg text-white pt-36 pb-24 lg:pt-44 lg:pb-32 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal">
+      <span class="inline-block text-xs tracking-[.25em] uppercase text-gold-300 border border-gold-400/40 rounded-full px-4 py-1.5 mb-6">Now Enrolling · Ho, Volta Region</span>
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">Nurturing <span class="text-gold-400">Future Leaders</span> in the Volta Region</h1>
+      <p class="mt-6 text-lg text-royal-100 max-w-xl">A world-class education rooted in strong values. From Creche to JHS, we prepare every child to think boldly, act with integrity and lead with confidence.</p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-4">
+        <a href="#contact" class="text-center bg-gold-500 hover:bg-gold-400 text-royal-900 font-semibold px-8 py-3.5 rounded-full shadow-lg transition">Enroll Your Child</a>
+        <a href="#classes" class="text-center border-2 border-white/60 hover:bg-white hover:text-royal-900 font-semibold px-8 py-3.5 rounded-full transition">Explore Our Classes</a>
+      </div>
+      <dl class="mt-12 grid grid-cols-3 gap-6 max-w-md">
+        <div><dt class="font-display text-3xl text-gold-400 font-bold">15:1</dt><dd class="text-xs text-royal-100 mt-1">Pupil–teacher ratio</dd></div>
+        <div><dt class="font-display text-3xl text-gold-400 font-bold">100%</dt><dd class="text-xs text-royal-100 mt-1">Dedicated staff</dd></div>
+        <div><dt class="font-display text-3xl text-gold-400 font-bold">3</dt><dd class="text-xs text-royal-100 mt-1">Learning stages</dd></div>
+      </dl>
+    </div>
+    <div class="reveal hidden lg:block">
+      <div class="relative mx-auto w-full max-w-md aspect-square">
+        <div class="absolute inset-0 rounded-[2.5rem] bg-white/10 border border-white/20 rotate-6"></div>
+        <div class="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-royal-600 to-royal-900 border border-gold-400/50 shadow-2xl flex items-center justify-center">
+          <svg viewBox="0 0 200 200" class="w-3/4" fill="none" aria-label="Illustration of an open book, graduation cap and star">
+            <circle cx="100" cy="100" r="88" stroke="#e8bf45" stroke-width="2" stroke-dasharray="4 8"/>
+            <path d="M100 62 40 88l60 26 60-26-60-26Z" fill="#e8bf45"/>
+            <path d="M68 104v26c0 8 14 16 32 16s32-8 32-16v-26l-32 14-32-14Z" fill="#fff" opacity=".92"/>
+            <path d="M160 88v34" stroke="#e8bf45" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="160" cy="126" r="5" fill="#e8bf45"/>
+            <path d="m100 24 4 9 10 1-7.500 6.500 2.500 9.500-9-5-9 5 2.500-9.500L86 34l10-1 4-9Z" fill="#f3d67a"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE VALUES -->
+<section id="values" class="py-24 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <p class="text-gold-600 font-semibold tracking-widest text-xs uppercase">Our Core Values</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-royal-900 mt-3">The Foundation of Every Elite Learner</h2>
+      <div class="w-16 h-1 bg-gold-500 mx-auto mt-5 rounded"></div>
+    </div>
+    <div class="mt-14 grid md:grid-cols-3 gap-8">
+      <article class="card reveal bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
+        <div class="w-16 h-16 rounded-2xl bg-royal-900 flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5Zm0 0v6m-5-8.500V16c0 1.500 2.200 3 5 3s5-1.500 5-3v-4.500"/></svg>
+        </div>
+        <h3 class="font-display text-xl font-bold text-royal-900">Academic Excellence</h3>
+        <p class="mt-3 text-sm leading-relaxed">A rigorous, balanced curriculum and passionate teachers who push every pupil to reach top results in BECE and beyond.</p>
+      </article>
+      <article class="card reveal bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
+        <div class="w-16 h-16 rounded-2xl bg-royal-900 flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3 4 6v6c0 4.500 3.400 8 8 9 4.600-1 8-4.500 8-9V6l-8-3Zm-3 9 2 2 4-4"/></svg>
+        </div>
+        <h3 class="font-display text-xl font-bold text-royal-900">Character &amp; Integrity</h3>
+        <p class="mt-3 text-sm leading-relaxed">We shape honest, respectful and responsible young people through mentorship, service and strong moral guidance.</p>
+      </article>
+      <article class="card reveal bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
+        <div class="w-16 h-16 rounded-2xl bg-royal-900 flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.500 3v2m5-2v2M9.500 19v2m5-2v2M3 9.500h2m-2 5h2m14-5h2m-2 5h2M7 7h10v10H7V7Zm3 3h4v4h-4v-4Z"/></svg>
+        </div>
+        <h3 class="font-display text-xl font-bold text-royal-900">Tech &amp; Innovation</h3>
+        <p class="mt-3 text-sm leading-relaxed">ICT labs, coding clubs and STEM projects that prepare learners for a digital, fast-changing world.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CLASSES -->
+<section id="classes" class="py-24">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <p class="text-gold-600 font-semibold tracking-widest text-xs uppercase">Curriculum &amp; Classes</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-royal-900 mt-3">A Journey for Every Stage</h2>
+      <div class="w-16 h-1 bg-gold-500 mx-auto mt-5 rounded"></div>
+    </div>
+    <div role="tablist" class="reveal mt-12 flex flex-wrap justify-center gap-3">
+      <button role="tab" data-tab="0" class="tab-btn px-6 py-3 rounded-full font-semibold text-sm border transition">Creche &amp; Nursery</button>
+      <button role="tab" data-tab="1" class="tab-btn px-6 py-3 rounded-full font-semibold text-sm border transition">Primary School</button>
+      <button role="tab" data-tab="2" class="tab-btn px-6 py-3 rounded-full font-semibold text-sm border transition">Junior High (JHS)</button>
+    </div>
+    <div id="tabPanel" class="reveal mt-10 max-w-5xl mx-auto bg-white border border-slate-200 rounded-3xl shadow-xl overflow-hidden grid md:grid-cols-5">
+      <div id="tabArt" class="md:col-span-2 bg-gradient-to-br from-royal-800 to-royal-600 p-10 flex flex-col items-center justify-center text-center text-white min-h-[240px]"></div>
+      <div class="md:col-span-3 p-8 sm:p-10">
+        <span id="tabAge" class="inline-block text-xs font-semibold tracking-wider uppercase bg-gold-300/40 text-gold-600 rounded-full px-3 py-1"></span>
+        <h3 id="tabTitle" class="font-display text-2xl font-bold text-royal-900 mt-4"></h3>
+        <p id="tabDesc" class="mt-3 leading-relaxed"></p>
+        <ul id="tabList" class="mt-6 grid sm:grid-cols-2 gap-3 text-sm"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADMISSIONS -->
+<section id="admissions" class="py-24 bg-royal-900 text-white">
+  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-5 gap-14 items-start">
+    <div class="lg:col-span-2 reveal">
+      <p class="text-gold-400 font-semibold tracking-widest text-xs uppercase">Admissions Hub</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold mt-3">Joining Volta Elite Is Simple</h2>
+      <p class="mt-5 text-royal-100 leading-relaxed">Four clear steps take your child from first enquiry to first day. Download our prospectus for fees, calendar and full details.</p>
+      <button id="prospectusBtn" class="mt-8 inline-flex items-center gap-3 bg-gold-500 hover:bg-gold-400 text-royal-900 font-semibold px-7 py-3.5 rounded-full shadow-lg transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>
+        Download Prospectus
+      </button>
+    </div>
+    <ol class="lg:col-span-3 grid sm:grid-cols-2 gap-6">
+      <li class="card reveal bg-white/5 border border-white/15 rounded-2xl p-6"><span class="font-display text-4xl text-gold-400 font-bold">01</span><h3 class="font-semibold mt-2">Submit an Enquiry</h3><p class="text-sm text-royal-100 mt-2">Fill in the enrollment form below or call our admissions office.</p></li>
+      <li class="card reveal bg-white/5 border border-white/15 rounded-2xl p-6"><span class="font-display text-4xl text-gold-400 font-bold">02</span><h3 class="font-semibold mt-2">Visit &amp; Meet Us</h3><p class="text-sm text-royal-100 mt-2">Tour the campus and meet our teachers and head of school.</p></li>
+      <li class="card reveal bg-white/5 border border-white/15 rounded-2xl p-6"><span class="font-display text-4xl text-gold-400 font-bold">03</span><h3 class="font-semibold mt-2">Assessment</h3><p class="text-sm text-royal-100 mt-2">A friendly placement session helps us understand your child's level.</p></li>
+      <li class="card reveal bg-white/5 border border-white/15 rounded-2xl p-6"><span class="font-display text-4xl text-gold-400 font-bold">04</span><h3 class="font-semibold mt-2">Confirm Admission</h3><p class="text-sm text-royal-100 mt-2">Receive your offer letter, complete registration and pay fees.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- CONTACT / ENROLL -->
+<section id="contact" class="py-24 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="reveal">
+      <p class="text-gold-600 font-semibold tracking-widest text-xs uppercase">Enrollment</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold text-royal-900 mt-3">Secure a Place for Your Child</h2>
+      <p class="mt-5 leading-relaxed">Tell us a little about your family and our admissions office will reach out by phone to guide you through the next steps.</p>
+      <ul class="mt-8 space-y-4 text-sm">
+        <li class="flex items-center gap-3"><span class="w-10 h-10 rounded-full bg-royal-900 text-gold-400 flex items-center justify-center">✓</span>Limited places per class</li>
+        <li class="flex items-center gap-3"><span class="w-10 h-10 rounded-full bg-royal-900 text-gold-400 flex items-center justify-center">✓</span>Personal call from our admissions team</li>
+        <li class="flex items-center gap-3"><span class="w-10 h-10 rounded-full bg-royal-900 text-gold-400 flex items-center justify-center">✓</span>No obligation to enquire</li>
+      </ul>
+    </div>
+    <form id="enrollForm" class="reveal bg-white border border-slate-200 rounded-3xl shadow-xl p-8 sm:p-10 space-y-5" novalidate>
+      <div>
+        <label for="parent" class="block text-sm font-semibold text-royal-900 mb-1.5">Parent's Full Name</label>
+        <input id="parent" required type="text" placeholder="e.g. Kwame Mensah" class="w-full rounded-xl border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-gold-500">
+      </div>
+      <div>
+        <label for="phone" class="block text-sm font-semibold text-royal-900 mb-1.5">Phone Number</label>
+        <input id="phone" required type="tel" placeholder="e.g. 024 000 0000" pattern="[0-9+\s]{9,15}" class="w-full rounded-xl border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-gold-500">
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label for="age" class="block text-sm font-semibold text-royal-900 mb-1.5">Child's Age</label>
+          <input id="age" required type="number" min="1" max="18" placeholder="e.g. 6" class="w-full rounded-xl border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-gold-500">
+        </div>
+        <div>
+          <label for="cls" class="block text-sm font-semibold text-royal-900 mb-1.5">Class of Interest</label>
+          <select id="cls" required class="w-full rounded-xl border border-slate-300 px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-gold-500">
+            <option value="">Select a class</option>
+            <option>Creche</option><option>Nursery</option><option>Primary School</option><option>Junior High School (JHS)</option>
+          </select>
+        </div>
+      </div>
+      <p id="formError" class="hidden text-sm text-red-600">Please complete all fields with valid details.</p>
+      <button type="submit" class="w-full bg-royal-800 hover:bg-royal-900 text-white font-semibold py-3.5 rounded-xl shadow-lg transition">Submit Enrollment Request</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-royal-900 text-royal-100 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-5 grid md:grid-cols-3 gap-10">
+    <div>
+      <p class="font-display text-2xl font-bold text-white">Volta Elite</p>
+      <p class="text-[11px] tracking-[.2em] uppercase text-gold-400 mt-1">International School</p>
+      <p class="text-sm mt-4 max-w-xs">Nurturing future leaders through excellence, integrity and innovation.</p>
+    </div>
+    <div class="text-sm">
+      <p class="font-semibold text-white mb-3">Visit Us</p>
+      <address class="not-italic space-y-1"><p>Ho, Volta Region</p><p>Ghana</p><p class="pt-2">Admissions: +233 00 000 0000</p><p>info@voltaelite.edu.gh</p></address>
+    </div>
+    <div>
+      <p class="font-semibold text-white mb-3 text-sm">Follow Us</p>
+      <div class="flex gap-3">
+        <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full border border-white/25 flex items-center justify-center hover:bg-gold-500 hover:text-royal-900 transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M14 8V6.500c0-.700.200-1 1.200-1H17V2.200C16.700 2.100 15.700 2 14.600 2 12.100 2 10.500 3.500 10.500 6.200V8H8v3.500h2.500V22H14V11.500h2.700L17 8h-3Z"/></svg></a>
+        <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full border border-white/25 flex items-center justify-center hover:bg-gold-500 hover:text-royal-900 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.500" cy="6.500" r="1" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="X (Twitter)" class="w-10 h-10 rounded-full border border-white/25 flex items-center justify-center hover:bg-gold-500 hover:text-royal-900 transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.200 2H21l-6.500 7.500L22 22h-6l-4.700-6.200L5.900 22H3l7-8L2.500 2h6.100l4.300 5.700L18.200 2Zm-1 18h1.600L7.900 3.700H6.200L17.200 20Z"/></svg></a>
+        <a href="#" aria-label="WhatsApp" class="w-10 h-10 rounded-full border border-white/25 flex items-center justify-center hover:bg-gold-500 hover:text-royal-900 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linejoin="round" d="M3 21l1.400-4.700A8.500 8.500 0 1 1 8 19.600L3 21Z"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-5 mt-12 pt-6 border-t border-white/10 text-xs text-center">
+    &copy; <span id="year"></span> Volta Elite International School. All rights reserved.
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center p-5 bg-royal-900/70 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box bg-white rounded-3xl max-w-md w-full p-8 text-center shadow-2xl border-t-4 border-gold-500">
+    <div class="w-16 h-16 mx-auto rounded-full bg-royal-900 flex items-center justify-center">
+      <svg class="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg>
+    </div>
+    <h3 id="modalTitle" class="font-display text-2xl font-bold text-royal-900 mt-5">Thank You!</h3>
+    <p class="mt-3 text-slate-600">Thank you for choosing Volta Elite. Our admissions office will contact you via phone shortly.</p>
+    <button id="modalClose" class="mt-7 bg-gold-500 hover:bg-gold-400 text-royal-900 font-semibold px-8 py-3 rounded-full transition">Close</button>
+  </div>
+</div>
+
+<script>
+// Mobile menu
+const menuBtn = document.getElementById('menuBtn'), menu = document.getElementById('mobileMenu');
+function toggleMenu(force) {
+  const open = force ?? menu.classList.contains('hidden');
+  menu.classList.toggle('hidden', !open);
+  document.getElementById('iconOpen').classList.toggle('hidden', open);
+  document.getElementById('iconClose').classList.toggle('hidden', !open);
+  menuBtn.setAttribute('aria-expanded', open);
+}
+menuBtn.addEventListener('click', () => toggleMenu());
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+
+// Modal
+const modal = document.getElementById('modal');
+function openModal() { modal.classList.remove('hidden'); modal.classList.add('flex'); requestAnimationFrame(() => modal.classList.add('open')); }
+function closeModal() { modal.classList.remove('open'); setTimeout(() => { modal.classList.add('hidden'); modal.classList.remove('flex'); }, 300); }
+document.getElementById('modalClose').addEventListener('click', closeModal);
+modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.getElementById('prospectusBtn').addEventListener('click', openModal);
+
+// Form
+const form = document.getElementById('enrollForm'), err = document.getElementById('formError');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  if (!form.checkValidity()) { err.classList.remove('hidden'); form.reportValidity(); return; }
+  err.classList.add('hidden'); form.reset(); openModal();
+});
+
+// Class tabs
+const tabs = [
+  { age:'Ages 1 – 5', title:'Creche & Nursery', icon:'🧸', desc:'A warm, play-based start where curiosity is nurtured and early literacy, numeracy and social skills take root.',
+    items:['Play-based learning','Phonics & early reading','Creative arts & music','Safe, caring environment'] },
+  { age:'Ages 6 – 11', title:'Primary School', icon:'📚', desc:'A strong academic foundation with engaging lessons in core subjects, ICT, French and Ghanaian language and culture.',
+    items:['English, Maths & Science','ICT & coding basics','Sports & clubs','Reading & public speaking'] },
+  { age:'Ages 12 – 15', title:'Junior High School (JHS)', icon:'🎓', desc:'Focused BECE preparation, leadership training and STEM exploration that prepare pupils for top senior high schools.',
+    items:['BECE excellence programme','STEM & robotics lab','Leadership & mentorship','Career guidance'] }
+];
+const btns = document.querySelectorAll('.tab-btn');
+function setTab(i) {
+  const t = tabs[i];
+  btns.forEach((b, idx) => {
+    const on = idx === i;
+    b.className = 'tab-btn px-6 py-3 rounded-full font-semibold text-sm border transition ' +
+      (on ? 'bg-royal-800 text-white border-royal-800 shadow-md' : 'bg-white text-royal-800 border-slate-300 hover:border-gold-500');
+    b.setAttribute('aria-selected', on);
+  });
+  document.getElementById('tabArt').innerHTML = `<div class="text-7xl">${t.icon}</div><p class="font-display text-xl mt-4 text-gold-300">${t.title}</p>`;
+  document.getElementById('tabAge').textContent = t.age;
+  document.getElementById('tabTitle').textContent = t.title;
+  document.getElementById('tabDesc').textContent = t.desc;
+  document.getElementById('tabList').innerHTML = t.items.map(x => `<li class="flex items-center gap-2"><span class="text-gold-500 font-bold">✦</span>${x}</li>`).join('');
+}
+btns.forEach(b => b.addEventListener('click', () => setTab(+b.dataset.tab)));
+setTab(0);
+
+// Scroll reveal
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
